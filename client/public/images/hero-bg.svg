@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111" />
+      <stop offset="60%" stop-color="#1C1C1C" />
+      <stop offset="100%" stop-color="#2A1B0E" />
+    </linearGradient>
+    <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B87333" />
+      <stop offset="50%" stop-color="#D4A853" />
+      <stop offset="100%" stop-color="#8B4513" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#B87333" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#1C1C1C" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+  
+  <!-- Ambient Glow -->
+  <circle cx="900" cy="400" r="600" fill="url(#glow)" />
+  
+  <!-- Abstract Copper Coils / Wires -->
+  <g opacity="0.35">
+    <path d="M-100,200 Q200,50 600,300 T1300,100" fill="none" stroke="url(#copperGrad)" stroke-width="8" />
+    <path d="M-100,250 Q220,100 620,350 T1300,150" fill="none" stroke="url(#copperGrad)" stroke-width="4" />
+    
+    <path d="M-50,600 Q300,450 700,700 T1400,500" fill="none" stroke="url(#copperGrad)" stroke-width="12" />
+    
+    <!-- Wire bundle coils -->
+    <ellipse cx="900" cy="400" rx="200" ry="80" fill="none" stroke="url(#copperGrad)" stroke-width="6" transform="rotate(-15 900 400)" />
+    <ellipse cx="910" cy="410" rx="180" ry="70" fill="none" stroke="url(#copperGrad)" stroke-width="4" transform="rotate(-15 900 400)" />
+    <ellipse cx="890" cy="390" rx="220" ry="90" fill="none" stroke="url(#copperGrad)" stroke-width="8" transform="rotate(-15 900 400)" />
+    
+    <ellipse cx="800" cy="500" rx="250" ry="100" fill="none" stroke="url(#copperGrad)" stroke-width="5" transform="rotate(25 800 500)" />
+    <ellipse cx="810" cy="510" rx="230" ry="90" fill="none" stroke="url(#copperGrad)" stroke-width="3" transform="rotate(25 800 500)" />
+  </g>
+  
+  <!-- Grid overlay for technical/industrial feel -->
+  <g opacity="0.05">
+    <path d="M 0,100 L 1200,100 M 0,200 L 1200,200 M 0,300 L 1200,300 M 0,400 L 1200,400 M 0,500 L 1200,500 M 0,600 L 1200,600 M 0,700 L 1200,700" stroke="#FFFFFF" stroke-width="1" />
+    <path d="M 100,0 L 100,800 M 200,0 L 200,800 M 300,0 L 300,800 M 400,0 L 400,800 M 500,0 L 500,800 M 600,0 L 600,800 M 700,0 L 700,800 M 800,0 L 800,800 M 900,0 L 900,800 M 1000,0 L 1000,800 M 1100,0 L 1100,800" stroke="#FFFFFF" stroke-width="1" />
+  </g>
+</svg>

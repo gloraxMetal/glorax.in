@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1C1C1C;
+  --color-accent: #B87333;
+  --color-accent-hover: #9e5a1e;
+  --color-amber-accent: #D4A853;
+  --color-bg-warm: #F5F3F0;
+  --color-near-black: #1A1A1A;
+  --color-secondary-text: #555555;
+  
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-condensed: 'Barlow Condensed', sans-serif;
+}
+
+/* Custom styles and micro-animations */
+@keyframes copperShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.copper-shimmer {
+  background: linear-gradient(
+    120deg,
+    rgba(184, 115, 51, 0) 30%,
+    rgba(212, 168, 83, 0.4) 40%,
+    rgba(212, 168, 83, 0.8) 50%,
+    rgba(212, 168, 83, 0.4) 60%,
+    rgba(184, 115, 51, 0) 70%
+  );
+  background-size: 200% auto;
+  animation: copperShimmer 6s infinite linear;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(28, 28, 28, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 115, 51, 0.2);
+}
+
+/* Smooth transitions */
+.transition-all-300 {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dirBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A1A" />
+      <stop offset="100%" stop-color="#262626" />
+    </linearGradient>
+    <linearGradient id="avatarAmber" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4A853" />
+      <stop offset="100%" stop-color="#A57C2B" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#dirBg)" stroke="#D4A853" stroke-width="1.5" />
+  
+  <!-- Silhouette -->
+  <g opacity="0.8">
+    <circle cx="150" cy="110" r="40" fill="url(#avatarAmber)" />
+    <path d="M 80,210 C 80,160 110,155 150,155 C 190,155 220,160 220,210 Z" fill="url(#avatarAmber)" />
+  </g>
+  
+  <!-- Text -->
+  <rect x="20" y="230" width="260" height="50" rx="4" fill="#111" stroke="#D4A853" stroke-width="0.5" />
+  <text x="150" y="250" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="bold" fill="#f5f3f0">MOHMMAD SHAHID</text>
+  <text x="150" y="265" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#d4a853">Director | [INSERT PHOTO]</text>
+</svg>
