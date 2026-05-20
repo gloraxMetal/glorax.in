@@ -120,16 +120,16 @@ function AppContent() {
 
       {/* 5. Navbar */}
       <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
-        ? 'bg-white/95 backdrop-blur-md shadow-md py-3.5 border-b border-gray-100'
-        : 'bg-white py-5 border-b border-bg-warm/50'
+        ? 'bg-white/95 backdrop-blur-md shadow-md py-2 border-b border-gray-100'
+        : 'bg-white py-3 border-b border-bg-warm/50'
         }`}>
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo — full size, no clipping */}
           <Link to="/" className="flex items-center group select-none">
             <img
               src="/images/glorax-logo.png"
               alt="Glorax Metal Recycling Pvt. Ltd."
-              className="h-10 sm:h-12 w-auto object-contain transition-opacity duration-200 group-hover:opacity-80"
+              className="h-14 sm:h-16 w-auto object-contain transition-opacity duration-200 group-hover:opacity-80"
             />
           </Link>
 
@@ -138,7 +138,9 @@ function AppContent() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `font-sans font-bold text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-accent border-b-2 border-accent pb-1' : 'text-[#333] hover:text-accent'
+                `font-sans font-semibold text-xs uppercase tracking-widest transition-all duration-200 ${isActive
+                  ? 'text-accent border-b-2 border-accent pb-0.5'
+                  : 'text-[#333] hover:text-accent'
                 }`
               }
             >
@@ -147,7 +149,9 @@ function AppContent() {
             <NavLink
               to="/products"
               className={({ isActive }) =>
-                `font-sans font-bold text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-accent border-b-2 border-accent pb-1' : 'text-[#333] hover:text-accent'
+                `font-sans font-semibold text-xs uppercase tracking-widest transition-all duration-200 ${isActive
+                  ? 'text-accent border-b-2 border-accent pb-0.5'
+                  : 'text-[#333] hover:text-accent'
                 }`
               }
             >
@@ -156,7 +160,9 @@ function AppContent() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `font-sans font-bold text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-accent border-b-2 border-accent pb-1' : 'text-[#333] hover:text-accent'
+                `font-sans font-semibold text-xs uppercase tracking-widest transition-all duration-200 ${isActive
+                  ? 'text-accent border-b-2 border-accent pb-0.5'
+                  : 'text-[#333] hover:text-accent'
                 }`
               }
             >
@@ -165,7 +171,9 @@ function AppContent() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `font-sans font-bold text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-accent border-b-2 border-accent pb-1' : 'text-[#333] hover:text-accent'
+                `font-sans font-semibold text-xs uppercase tracking-widest transition-all duration-200 ${isActive
+                  ? 'text-accent border-b-2 border-accent pb-0.5'
+                  : 'text-[#333] hover:text-accent'
                 }`
               }
             >
@@ -187,7 +195,7 @@ function AppContent() {
           {/* Mobile Menu Hamburger Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-primary hover:text-accent focus:outline-none cursor-pointer"
+            className="md:hidden p-2 text-primary hover:text-accent focus:outline-none cursor-pointer transition-colors"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -308,11 +316,13 @@ function AppContent() {
           {/* Logo & Description */}
           <div className="lg:col-span-4 space-y-4">
             <Link to="/" className="flex items-center select-none">
-              <img
-                src="/images/glorax-logo.png"
-                alt="Glorax Metal Recycling Pvt. Ltd."
-                className="h-12 w-auto object-contain bg-white rounded-lg px-2 py-1"
-              />
+              <div className="bg-white rounded-xl px-3 py-2 shadow-md inline-flex">
+                <img
+                  src="/images/glorax-logo.png"
+                  alt="Glorax Metal Recycling Pvt. Ltd."
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
             </Link>
             <p className="font-sans text-xs text-gray-400 leading-relaxed max-w-sm">
               Glorax Metal Recycling Private Limited is an Indian registered company based in Rai, Haryana. We process non-ferrous copper scraps to generate sustainable raw inputs for smelting and electrical manufacturers.
