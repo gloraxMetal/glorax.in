@@ -78,19 +78,19 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="md:col-span-11 lg:col-span-10 flex flex-col items-start text-left z-10"
           >
-            <span className="inline-block text-accent font-condensed tracking-wider font-semibold text-sm sm:text-base uppercase bg-accent/10 px-3.5 py-1.5 rounded-full border border-accent/25 mb-5">
-              Industrial Metal Recycling Experts
+            <span className="inline-block font-condensed tracking-widest font-bold text-sm sm:text-base uppercase bg-gradient-to-r from-accent to-amber-accent text-transparent bg-clip-text px-3.5 py-1.5 rounded-full border border-accent/30 mb-5">
+              ✦ Industrial Metal Recycling Experts ✦
             </span>
             
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-condensed font-extrabold text-white leading-none uppercase mb-6">
+            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-heading font-black text-white leading-[0.95] uppercase mb-6 tracking-tight">
               India's Trusted <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-accent">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8923A] via-[#D4A853] to-[#B87333] drop-shadow-[0_2px_12px_rgba(184,115,51,0.5)]">
                 Copper &amp; Non-Ferrous
               </span> <br />
               Metal Recyclers
             </h1>
             
-            <p className="text-[#D1D1D1] text-base sm:text-lg lg:text-xl font-sans max-w-2xl leading-relaxed mb-8">
+            <p className="text-[#C8C8C8] text-base sm:text-lg lg:text-xl font-sans font-medium max-w-2xl leading-relaxed mb-8">
               Premium quality copper scrap, strips, rassa, tally, AC pipes &amp; dori — sourced responsibly, delivered reliably across India.
             </p>
             
@@ -151,13 +151,13 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 text-left"
           >
-            <span className="text-accent font-condensed tracking-wider font-semibold text-sm uppercase block mb-3">
-              Who We Are
+            <span className="font-condensed tracking-widest font-bold text-xs uppercase text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-accent block mb-3">
+              ◆ Who We Are ◆
             </span>
-            <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-[#1A1A1A] uppercase leading-tight mb-6">
-              Empowering Industries Through Professional Copper Recycling
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#111] uppercase leading-tight mb-6 tracking-tight">
+              Empowering Industries Through <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-accent">Professional Copper</span> Recycling
             </h2>
-            <p className="font-sans text-[#444] text-base sm:text-lg leading-relaxed mb-6">
+            <p className="font-sans font-medium text-[#333] text-base sm:text-lg leading-relaxed mb-6">
               Glorax Metal Recycling Pvt. Ltd. is a Haryana-based private limited company specializing in high-quality copper and non-ferrous scrap recycling. We supply trusted metal products to manufacturers, traders, and industries across India.
             </p>
             <p className="font-sans text-[#555] text-sm sm:text-base leading-relaxed mb-8">
@@ -200,13 +200,13 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Header info */}
             <div className="lg:col-span-4 text-left">
-              <span className="text-accent font-condensed tracking-wider font-semibold text-sm uppercase block mb-1">
-                Our Partnerships
+              <span className="font-condensed tracking-widest font-bold text-xs uppercase text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-accent block mb-1">
+                ◆ Our Partnerships ◆
               </span>
-              <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-[#1A1A1A] uppercase tracking-wide">
-                10+ Trusted Clients
+              <h3 className="text-2xl sm:text-3xl font-heading font-black text-[#111] uppercase tracking-tight">
+                10+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-accent">Trusted</span> Clients
               </h3>
-              <p className="font-sans text-xs text-secondary-text mt-1 max-w-sm">
+              <p className="font-sans font-medium text-xs text-[#555] mt-2 max-w-sm">
                 Proud supplier of high-purity recycled copper to India's leading industrial buyers, aggregators, and manufacturing hubs.
               </p>
             </div>
@@ -250,11 +250,11 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">
             <div>
-              <span className="text-accent font-condensed tracking-wider font-semibold text-sm uppercase block mb-3">
-                Our Offerings
+              <span className="font-condensed tracking-widest font-bold text-xs uppercase text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-accent block mb-3">
+                ◆ Our Offerings ◆
               </span>
-              <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-[#1A1A1A] uppercase leading-tight">
-                Premium Copper Products
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#111] uppercase leading-tight tracking-tight">
+                Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-accent">Copper</span> Products
               </h2>
             </div>
             <Link 
@@ -289,10 +289,10 @@ export default function Home() {
                     </span>
                   </div>
                   <div className="p-5 text-left">
-                    <h3 className="font-sans font-extrabold text-base text-[#1A1A1A] uppercase tracking-wide group-hover:text-accent transition-colors">
+                    <h3 className="font-heading font-black text-base text-[#111] uppercase tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent group-hover:to-amber-accent transition-all duration-300">
                       {prod.name}
                     </h3>
-                    <p className="font-sans text-xs text-secondary-text mt-2.5 line-clamp-3 leading-relaxed">
+                    <p className="font-sans font-medium text-xs text-[#555] mt-2.5 line-clamp-3 leading-relaxed">
                       {prod.desc}
                     </p>
                   </div>
@@ -317,11 +317,11 @@ export default function Home() {
       <section className="py-20 bg-bg-warm">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full text-center">
           
-          <span className="text-accent font-condensed tracking-wider font-semibold text-sm uppercase block mb-3">
-            Our Edge
+          <span className="font-condensed tracking-widest font-bold text-xs uppercase text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-accent block mb-3">
+            ◆ Our Edge ◆
           </span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-[#1A1A1A] uppercase leading-tight mb-14">
-            Setting Standards in Metal Recycling
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#111] uppercase leading-tight mb-14 tracking-tight">
+            Setting <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-accent">Standards</span> in Metal Recycling
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
@@ -338,11 +338,11 @@ export default function Home() {
                   <div className="p-1 bg-accent/10 rounded-full flex-shrink-0">
                     <CheckCircle2 className="h-5 w-5 text-accent" />
                   </div>
-                  <h3 className="font-sans font-extrabold text-base text-primary uppercase tracking-wide">
+                  <h3 className="font-heading font-black text-base text-[#111] uppercase tracking-tight">
                     {point.title}
                   </h3>
                 </div>
-                <p className="font-sans text-xs sm:text-sm text-secondary-text leading-relaxed">
+                <p className="font-sans font-medium text-xs sm:text-sm text-[#555] leading-relaxed">
                   {point.desc}
                 </p>
               </motion.div>
@@ -360,10 +360,10 @@ export default function Home() {
         
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-left max-w-3xl">
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white uppercase tracking-wide">
-              Looking to buy or sell copper scrap?
+            <h2 className="text-2xl sm:text-4xl font-heading font-black text-white uppercase tracking-tight leading-tight">
+              Looking to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8923A] via-[#D4A853] to-[#B87333]">Buy or Sell</span> Copper Scrap?
             </h2>
-            <p className="font-sans text-gray-400 text-sm sm:text-base mt-2">
+            <p className="font-sans font-medium text-gray-400 text-sm sm:text-base mt-3">
               Get in touch with our team today for updated market pricing, bulk contracts, and delivery schedules.
             </p>
           </div>
