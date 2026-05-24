@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 require('dotenv').config();
 
 const app = express();
@@ -17,7 +17,7 @@ app.use(morgan('dev'));
 // CORS configuration
 const allowedOrigins = [
   process.env.CLIENT_URL || 'http://localhost:5173',
-  process.env.CLIENT_URL_2, // e.g. your Vercel deployment URL
+  process.env.CLIENT_URL_2,
   'http://localhost:3000',
   'https://glorax.in',
   'https://www.glorax.in'
@@ -25,7 +25,6 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV === 'development') {
       return callback(null, true);
@@ -39,41 +38,14 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Transporter verification/configuration
-const isDummySMTP = !process.env.SMTP_HOST || 
-                     process.env.SMTP_HOST.includes('smtp.gmail.com') && process.env.SMTP_PASS === 'placeholder_pass' ||
-                     process.env.SMTP_PASS === 'your_email_password';
+// Resend Email Client Setup
+const resendApiKey = process.env.RESEND_API_KEY;
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
-console.log(`📧 SMTP Config → Host: ${process.env.SMTP_HOST || 'NOT SET'}, Port: ${process.env.SMTP_PORT || 'NOT SET'}, User: ${process.env.SMTP_USER || 'NOT SET'}, Pass: ${process.env.SMTP_PASS ? '[SET]' : 'NOT SET'}, isDummySMTP: ${isDummySMTP}`);
-
-let transporter;
-let smtpStatus = { ready: false, error: null };
-
-if (!isDummySMTP) {
-  transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || '465'),
-    secure: parseInt(process.env.SMTP_PORT || '465') === 465, // true for 465 SSL, false for 587 TLS
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS
-    }
-  });
-
-  // Verify transporter connection
-  transporter.verify((error, success) => {
-    if (error) {
-      console.error('❌ SMTP VERIFY FAILED:', error.message, '| Code:', error.code);
-      smtpStatus = { ready: false, error: error.message };
-      transporter = null;
-    } else {
-      console.log('✅ Mail server is ready to take messages');
-      smtpStatus = { ready: true, error: null };
-    }
-  });
+if (resend) {
+  console.log('✅ Resend email client initialized — ready to send emails via HTTPS API');
 } else {
-  console.log('ℹ️ Running with placeholder SMTP configuration. Emails will be logged to the console instead of sent.');
-  smtpStatus = { ready: false, error: 'Placeholder credentials detected' };
+  console.log('ℹ️ RESEND_API_KEY not set — running in dev/log-only mode');
 }
 
 // Health check endpoint
@@ -81,14 +53,13 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'ok', timestamp: new Date() });
 });
 
-// SMTP status check endpoint (for debugging)
+// Email status check endpoint
 app.get('/api/smtp-status', (req, res) => {
   res.status(200).json({
-    smtpReady: smtpStatus.ready,
-    smtpError: smtpStatus.error,
-    smtpUser: process.env.SMTP_USER || 'NOT SET',
-    smtpHost: process.env.SMTP_HOST || 'NOT SET',
-    isDummyMode: isDummySMTP
+    emailReady: !!resend,
+    provider: resend ? 'Resend (HTTPS API)' : 'None (Dev Mode)',
+    fromEmail: process.env.FROM_EMAIL || 'onboarding@resend.dev',
+    receiverEmail: process.env.RECEIVER_EMAIL || 'contact@glorax.in'
   });
 });
 
@@ -159,30 +130,36 @@ app.post('/api/contact', async (req, res) => {
   `;
 
   try {
-    if (transporter) {
-      await transporter.sendMail({
-        from: `"${name}" <${process.env.SMTP_USER}>`,
-        to: process.env.RECEIVER_EMAIL || 'contact@glorax.in',
+    if (resend) {
+      const { data, error } = await resend.emails.send({
+        from: process.env.FROM_EMAIL || 'Glorax Enquiry <onboarding@resend.dev>',
+        to: [process.env.RECEIVER_EMAIL || 'contact@glorax.in'],
         replyTo: email,
         subject: mailSubject,
         html: mailHtml,
         text: `New Enquiry from ${name}\n\nCompany: ${companyName || 'N/A'}\nPhone: ${phone}\nEmail: ${email}\nProduct of Interest: ${product || 'All Products'}\n\nMessage:\n${message}`
       });
-      console.log(`✉️ Email successfully sent for ${name} <${email}>`);
+
+      if (error) {
+        console.error('❌ Resend API error:', error);
+        return res.status(500).json({ error: 'Failed to process enquiry. Please try again later or contact us directly at contact@glorax.in.' });
+      }
+
+      console.log(`✉️ Email successfully sent via Resend for ${name} <${email}> | ID: ${data.id}`);
       return res.status(200).json({ success: true, message: "Thank you! We'll get back to you within 24 hours." });
+
     } else {
-      // Mock sending in local dev/fallback mode
+      // Dev/fallback mode — log to console
       console.log('==================================================');
-      console.log('SIMULATED EMAIL DISPATCH (NO SMTP CREDENTIALS)');
+      console.log('SIMULATED EMAIL DISPATCH (NO RESEND_API_KEY)');
       console.log(`Subject: ${mailSubject}`);
       console.log(`To: ${process.env.RECEIVER_EMAIL || 'contact@glorax.in'}`);
       console.log(`Reply-To: ${email}`);
-      console.log(`Body (Text):`);
       console.log(`Name: ${name}\nCompany: ${companyName || 'N/A'}\nPhone: ${phone}\nEmail: ${email}\nProduct: ${product}\nMessage: ${message}`);
       console.log('==================================================');
-      return res.status(200).json({ 
-        success: true, 
-        message: "Thank you! [Dev Mode - Email Logged to Console] We'll get back to you within 24 hours." 
+      return res.status(200).json({
+        success: true,
+        message: "Thank you! [Dev Mode - Email Logged to Console] We'll get back to you within 24 hours."
       });
     }
   } catch (error) {
