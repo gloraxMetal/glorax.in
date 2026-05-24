@@ -52,8 +52,8 @@ let smtpStatus = { ready: false, error: null };
 if (!isDummySMTP) {
   transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: parseInt(process.env.SMTP_PORT) === 465, // true for 465, false for others
+    port: parseInt(process.env.SMTP_PORT || '465'),
+    secure: parseInt(process.env.SMTP_PORT || '465') === 465, // true for 465 SSL, false for 587 TLS
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS
