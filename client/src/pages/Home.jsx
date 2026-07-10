@@ -6,7 +6,7 @@ import { ShieldCheck, MapPin, PhoneCall, Award, ArrowRight, CheckCircle2, Chevro
 const trustItems = [
   { icon: ShieldCheck, title: "GST Registered", desc: "GSTIN: 06AAJCV6761B1ZA" },
   { icon: MapPin, title: "Sonipat, Haryana", desc: "HSIIDC Industrial Area" },
-  { icon: PhoneCall, title: "+91 99717 21279", desc: "Direct Call / WhatsApp" },
+  { icon: PhoneCall, title: "+91 9355219874", desc: "Direct Call / WhatsApp" },
   { icon: Award, title: "Est. 2023", desc: "Private Limited Company" },
 ];
 

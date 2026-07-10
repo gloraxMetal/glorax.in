@@ -177,7 +177,7 @@ export default function Products() {
     // Per-page SEO
     document.title = 'Copper Strips, Rassa, Tally, AC Pipes & Dori | Glorax Metal Recycling Products';
     document.querySelector('meta[name="description"]')?.setAttribute('content',
-      'Buy high-purity copper scrap products — Copper Strips (Patti), Rassa (Wire), Tally, AC Pipes, Dori. GST compliant supplier in Haryana. Bulk orders, pan-India delivery. Call +91 99717 21279.'
+      'Buy high-purity copper scrap products — Copper Strips (Patti), Rassa (Wire), Tally, AC Pipes, Dori. GST compliant supplier in Haryana. Bulk orders, pan-India delivery. Call +91 9355219874.'
     );
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://glorax.in/products');
 
@@ -355,7 +355,7 @@ export default function Products() {
           <div className="space-y-4">
             {[
               { q: "What types of copper scrap does Glorax supply?", a: "Glorax Metal Recycling supplies five primary copper scrap categories: Copper Strips (Patti) for transformer & busbar use, Copper Rassa (bare wire/Millberry) for re-drawing, Copper Tally for smelting, AC Pipes (DHP copper tubes) from HVAC systems, and Copper Dori (hair wire) for motor rewinding. All grades are available for bulk orders with full GST invoicing." },
-              { q: "What is the minimum order quantity for copper scrap?", a: "We cater to both small and large bulk buyers. Minimum order quantities vary by product — typically starting from 100 kg for retail and 1 MT+ for wholesale/industrial supply. Contact us at +91 99717 21279 for specific order requirements." },
+              { q: "What is the minimum order quantity for copper scrap?", a: "We cater to both small and large bulk buyers. Minimum order quantities vary by product — typically starting from 100 kg for retail and 1 MT+ for wholesale/industrial supply. Contact us at +91 9355219874 for specific order requirements." },
               { q: "Do you supply copper scrap across all of India?", a: "Yes. Glorax Metal Recycling has a pan-India logistics network enabling delivery to major industrial hubs including Delhi NCR, Mumbai, Ahmedabad, Chennai, Bengaluru, Hyderabad, Kolkata, Rajkot, and Ludhiana. We partner with reliable freight carriers for timely delivery." },
               { q: "What is the purity of your copper scrap products?", a: "Our copper scrap products are rigorously graded. Copper Strips and Rassa carry a minimum 99.9% copper purity (ETP/Millberry grade). Copper Tally ranges from 97% to 99% purity. AC Pipes are DHP grade copper. All products undergo quality inspection before dispatch." },
               { q: "Is Glorax Metal Recycling GST registered?", a: "Yes. Glorax Metal Recycling Private Limited is a fully GST-registered company with GSTIN 06AAJCV6761B1ZA, incorporated under the Registrar of Companies, Haryana. We provide complete documentation including GST invoices, e-way bills, and weight certificates for every transaction." }

@@ -42,9 +42,9 @@ export default function Contact() {
 
   // Per-page SEO
   useEffect(() => {
-    document.title = 'Contact Glorax Metal Recycling | Copper Scrap Enquiry | +91 99717 21279';
+    document.title = 'Contact Glorax Metal Recycling | Copper Scrap Enquiry | +91 9355219874';
     document.querySelector('meta[name="description"]')?.setAttribute('content',
-      'Get in touch with Glorax Metal Recycling for copper scrap pricing, bulk orders, and delivery. Call +91 99717 21279 or email contact@glorax.in. Based in Rai Industrial Area, Sonipat, Haryana.'
+      'Get in touch with Glorax Metal Recycling for copper scrap pricing, bulk orders, and delivery. Call +91 9355219874 or email contact@glorax.in. Based in Rai Industrial Area, Sonipat, Haryana.'
     );
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://glorax.in/contact');
   }, []);
@@ -161,10 +161,10 @@ export default function Contact() {
                     Direct Sales Phone
                   </span>
                   <a 
-                    href="tel:+919971721279" 
+                    href="tel:+919355219874" 
                     className="font-sans text-sm sm:text-base font-bold text-primary hover:text-accent transition-colors block mt-0.5"
                   >
-                    +91 99717 21279
+                    +91 9355219874
                   </a>
                 </div>
               </div>
@@ -298,7 +298,7 @@ export default function Contact() {
                     </label>
                     <input 
                       type="text" 
-                      placeholder="e.g. +91 99717 21279" 
+                      placeholder="e.g. +91 9355219874" 
                       {...register("phone")}
                       className={`font-sans text-sm border p-3 rounded bg-bg-warm/30 focus:outline-none focus:ring-1 focus:bg-white transition-all ${
                         errors.phone ? 'border-rose-400 focus:ring-rose-400' : 'border-gray-200 focus:ring-accent focus:border-accent'

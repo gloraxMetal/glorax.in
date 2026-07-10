@@ -38,7 +38,7 @@ function SchemaMarkup() {
             "image": "https://glorax.in/images/hero-bg.svg",
             "description": "India's trusted supplier of high-purity copper scrap — Strips, Rassa, Tally, AC Pipes and Dori. GST registered private limited company based in Rai Industrial Area, Sonipat, Haryana. Pan-India delivery.",
             "foundingDate": "2023-11-03",
-            "telephone": "+919971721279",
+            "telephone": "+919355219874",
             "email": "contact@glorax.in",
             "vatID": "06AAJCV6761B1ZA",
             "legalName": "Glorax Metal Recycling Private Limited",
@@ -118,7 +118,7 @@ function SchemaMarkup() {
           {
             "@type": "Question",
             "name": "How can I contact Glorax Metal Recycling for bulk orders?",
-            "acceptedAnswer": { "@type": "Answer", "text": "You can contact Glorax Metal Recycling at +91 99717 21279 (call or WhatsApp), email contact@glorax.in, or submit an enquiry through the contact form at glorax.in/contact. We respond within 24 hours on business days." }
+            "acceptedAnswer": { "@type": "Answer", "text": "You can contact Glorax Metal Recycling at +91 9355219874 (call or WhatsApp), email contact@glorax.in, or submit an enquiry through the contact form at glorax.in/contact. We respond within 24 hours on business days." }
           }
         ]
       },
@@ -254,11 +254,11 @@ function AppContent() {
           {/* Right Side Call CTA Chip */}
           <div className="hidden md:flex items-center">
             <a
-              href="tel:+919971721279"
+              href="tel:+919355219874"
               className="px-4 py-2 bg-[#F9F8F6] border border-[#EBEAE6] hover:border-accent/40 rounded-full flex items-center gap-2 font-sans font-bold text-xs text-primary hover:text-accent shadow-sm hover:shadow transition-all group"
             >
               <Phone className="h-3.5 w-3.5 text-accent transform group-hover:scale-110 transition-transform" />
-              +91 99717 21279
+              +91 9355219874
             </a>
           </div>
 
@@ -327,9 +327,9 @@ function AppContent() {
                 <p className="font-sans text-[10px] uppercase font-bold text-secondary-text tracking-wide">
                   Direct Inquiries
                 </p>
-                <a href="tel:+919971721279" className="flex items-center gap-3 font-sans text-xs font-bold text-primary">
+                <a href="tel:+919355219874" className="flex items-center gap-3 font-sans text-xs font-bold text-primary">
                   <Phone className="h-4 w-4 text-accent" />
-                  +91 99717 21279
+                  +91 9355219874
                 </a>
                 <a href="mailto:contact@glorax.in" className="flex items-center gap-3 font-sans text-xs font-medium text-secondary-text">
                   <Mail className="h-4 w-4 text-accent" />
@@ -353,7 +353,7 @@ function AppContent() {
 
       {/* 4. WhatsApp CTA Floating Widget */}
       <a
-        href="https://wa.me/919971721279?text=Hi%2C%20I'm%20interested%20in%20your%20copper%20products."
+        href="https://wa.me/919355219874?text=Hi%2C%20I'm%20interested%20in%20your%20copper%20products."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20ba59] text-white p-3.5 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 group flex items-center justify-center cursor-pointer"
@@ -441,8 +441,8 @@ function AppContent() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="h-4 w-4 text-accent flex-shrink-0" />
-                <a href="tel:+919971721279" className="hover:text-accent transition-colors">
-                  +91 99717 21279
+                <a href="tel:+919355219874" className="hover:text-accent transition-colors">
+                  +91 9355219874
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
