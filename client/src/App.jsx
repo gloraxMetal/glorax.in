@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail, MapPin, ChevronUp, MessageCircle } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, ChevronUp, MessageCircle, User } from 'lucide-react';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import About from './pages/About';
@@ -251,14 +251,21 @@ function AppContent() {
             </NavLink>
           </nav>
 
-          {/* Right Side Call CTA Chip */}
-          <div className="hidden md:flex items-center">
+          {/* Right Side CTAs */}
+          <div className="hidden md:flex items-center gap-3">
             <a
               href="tel:+919355219874"
               className="px-4 py-2 bg-[#F9F8F6] border border-[#EBEAE6] hover:border-accent/40 rounded-full flex items-center gap-2 font-sans font-bold text-xs text-primary hover:text-accent shadow-sm hover:shadow transition-all group"
             >
               <Phone className="h-3.5 w-3.5 text-accent transform group-hover:scale-110 transition-transform" />
               +91 9355219874
+            </a>
+            <a
+              href="https://admin.glorax.in"
+              className="px-5 py-2.5 bg-[#1C1C1C] hover:bg-accent text-white rounded-full flex items-center gap-2 font-sans font-bold text-xs shadow-md hover:shadow-lg transition-all group"
+            >
+              <User className="h-4 w-4 text-white/80 group-hover:text-white" />
+              Admin Portal
             </a>
           </div>
 
@@ -324,6 +331,13 @@ function AppContent() {
 
               {/* Mobile Drawer Footer Contacts */}
               <div className="space-y-4 border-t border-gray-100 pt-6 text-left">
+                <a
+                  href="https://admin.glorax.in"
+                  className="w-full px-4 py-3 bg-[#1C1C1C] hover:bg-accent text-white rounded-xl flex justify-center items-center gap-2 font-sans font-bold text-sm shadow-md transition-all mb-4"
+                >
+                  <User className="h-4 w-4" />
+                  Admin Portal
+                </a>
                 <p className="font-sans text-[10px] uppercase font-bold text-secondary-text tracking-wide">
                   Direct Inquiries
                 </p>
